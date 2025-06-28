@@ -13,7 +13,7 @@ from datetime import datetime
 import uuid
 
 def check_and_send_budget_emails():
-    client = MongoClient("mongodb://localhost:27017")
+    client = MongoClient(os.getenv("MONGODB_URI"))
     db = client["finance"]
     print(db)
     print(db.list_collection_names())
@@ -152,7 +152,7 @@ def handle_recurring_transactions():
 
 def send_transaction_insights_email():
     # Step 1: Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27017")
+    client = MongoClient(os.getenv("MONGODB_URI"))
     db = client["finance"]
 
     # Step 2: Fetch default account
