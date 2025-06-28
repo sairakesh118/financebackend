@@ -51,9 +51,9 @@ app.include_router(
 )  # Assuming you have a similar router for transactions
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(check_and_send_budget_emails, 'interval', days=1, max_instances=3)
-scheduler.add_job(handle_recurring_transactions, 'interval', days=1, max_instances=3)
-scheduler.add_job(send_transaction_insights_email, 'interval', seconds=10, max_instances=3)
+scheduler.add_job(check_and_send_budget_emails, 'interval', days=1, max_instances=1)
+scheduler.add_job(handle_recurring_transactions, 'interval', days=1, max_instances=1)
+scheduler.add_job(send_transaction_insights_email, 'interval',  weeks=4, max_instances=1)
 
 scheduler.start()
 
