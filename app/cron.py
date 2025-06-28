@@ -208,9 +208,8 @@ Transactions:
 """
 
     # Step 6: Generate insights using Groq
-    try:
-        GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-        groq_client = Groq(api_key=GROQ_API_KEY)  # or set as env var
+    try: 
+        groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))  # or set as env var
         response = groq_client.chat.completions.create(
             model="llama3-70b-8192",  # You can also try Mixtral
             messages=[{"role": "user", "content": prompt}],
