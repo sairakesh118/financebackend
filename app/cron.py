@@ -86,7 +86,7 @@ Finance Bot
 
 
 def handle_recurring_transactions():
-    client = MongoClient("mongodb://localhost:27017")
+    client = MongoClient(os.getenv("MONGODB_URI"))
     db = client["finance"]
     today = datetime.now(pytz.UTC).date()
 

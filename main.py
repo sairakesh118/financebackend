@@ -30,7 +30,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://finance-2rq1.vercel.app", "http://localhost:3000"],  # no trailing slash
+    allow_origins=["*"]
+,  # no trailing slash
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
